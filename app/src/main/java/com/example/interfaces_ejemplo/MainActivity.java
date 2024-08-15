@@ -55,6 +55,8 @@ public class MainActivity extends AppCompatActivity implements UserView {
         botonCrear.setOnClickListener(v -> {
 
             user.name = nombre.getText().toString();
+            user.email = user.name + "@" + user.name + ".com";
+            user.password = "1234";
             userPresenter.crearUsuario(user);
         });
 
@@ -105,7 +107,7 @@ public class MainActivity extends AppCompatActivity implements UserView {
         adapter.notifyDataSetChanged();
         itemSeleccionado.setText("");
 
-        Toast.makeText(this, "Nuevo usuario creado", Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Usuario eliminado", Toast.LENGTH_SHORT).show();
 
     }
 }
